@@ -1,13 +1,123 @@
 <!DOCTYPE html>
-<html>
-    <head>
-            <title>supersite</title>
-    </head>
+<html lang="ru">
+<head>
+    <!-- Метаданные документа: кодировка UTF-8 и адаптивный дизайн для мобильных устройств -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO BROW</title>
+
+    <style>
+        /* Стили для всего сайта */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif; 
+            background-color: #FADADD; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-behavior: smooth; /* Плавная прокрутка по ссылкам */
+        }
+
+        header {
+            position: fixed; /* фиксация панели */
+            top: 0;
+            width: 100%;
+            background-color: #FADADD;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для панели */
+            z-index: 1000; /* благодаря этому панель держится вверху */
+        }
+        /*делает меню красивым */
+        nav {
+            display: flex;
+            justify-content: space-around; /* Равномерное распределение ссылок */
+            max-width: 800px; /* Максимальная ширина */
+            margin: 0 auto; /* Центр */
+        }
+
+        /* Стили для панели */
+        nav a {
+            text-decoration: none; /* Убираем подчеркивание у ссылок */
+            color: black;
+            font-size: 1.5rem; 
+            font-family: 'Verdana', sans-serif; 
+        }
+
+        /* рубрики */
+        section {
+            height: 100vh; /*  100% высоты экрана */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            padding: 20px;
+            box-sizing: border-box; /* внутренняя рамка */
+        }
+
+        .logo {
+            margin-bottom: 60px; 
+            text-align: center;
+        }
+
+        .logo img {
+            width: 400px; /* Ширина логотипа */
+        }
+
+        /* Кнопка "Записаться онлайн" */
+        .button-container {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Стили для кнопки */
+        .button-container a {
+            background-color: #F78FB3; 
+            color: white;
+            padding: 15px 30px; 
+            border-radius: 30px; /* Закругленные углы */
+            font-size: 1.5rem;
+            text-decoration: none; /* Убираем подчеркивание у ссылки */
+            transition: background-color 0.3s ease; /* Плавное изменения фона */
+        }
+
+        /* кликабельно */
+        .button-container a:hover {
+            background-color: #FF69B4; 
+        }
+    </style>
+</head>
 <body>
-    <h1>SITE</h1> 
-        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Aspernatur ducimus nemo odio ratione hic similique delectus ea quo pariatur nesciunt.</p>
-     <a href="https://www.google.com/" >Google</a>
-        <h2 style="text-align: center;">Facultatea de Matemarica si Informatica</h2>
+
+    <header>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#gallery">Галерея</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#info">Информация</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="logo">
+            <img src="imgg/logo.jpg.png">
+        </div>
+        <div class="button-container">
+            <a href="https://forms.gle/nL8gaSAkg9HMp6ZJA" target="_blank">ЗАПИСАТЬСЯ ОНЛАЙН</a>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Галерея</h2>
+    </section>
+
+    <section id="reviews">
+        <h2>Отзывы</h2>
+    </section>
+
+    <section id="info">
+        <h2>Информация</h2>
+    </section>
+
 </body>
-    </html>
+</html>
