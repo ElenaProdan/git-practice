@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>probrow</title>
+    <title>PRO BROW</title>
 
     <style>
         /* Стили для всего сайта */
@@ -99,10 +99,10 @@
 
     <section id="home">
         <div class="logo">
-            <img src="imgg/logotip.png">
+            <img src="\Users\User\Downloads\MI21Z\SEM 1\PPW\LAB\imgg\logotip.png ">
         </div>
         <div class="button-container">
-            <a href="https://forms.gle/nL8gaSAkg9HMp6ZJA" target="_blank">ЗАПИСАТЬСяЯ ОНЛАЙН</a>
+            <a href="https://forms.gle/nL8gaSAkg9HMp6ZJA" target="_blank">ЗАПИСАТЬСЯ ОНЛАЙН</a>
         </div>
     </section>
 
@@ -110,17 +110,66 @@
         <h2>Галерея</h2>
         <h3>Работа мастера Елены</h3>
         <div id="imagesContainer">
-            <img src="C:\Users\User\Downloads\MI21Z\SEM 1\PPW\LAB\imgg\раб1.jpg " alt="" width="150">
-            <img src="images/work2.jpg" alt="Работа 2" width="150">
-            <img src="images/work3.jpg" alt="Работа 3" width="150">
+            <img src="imgg\раб4.jpg"  width="200">
+            <img src="imgg\8QnQY9kyHJ8.jpg " width="200">
+            <img src="imgg\раб3.jpg "  width="200">
         </div>
         <div>
             <button id="loadMoreButton" onclick="showMoreImages()">Смотреть ещё...</button>
         </div>
     </section>
+  
+    <script>
+        function showMoreImages() {
+            const imagesContainer = document.getElementById('imagesContainer');
+            <div id="imagesContainer">
+                <img src="imgg\раб1.jpg " width="200">
+                <img src="imgg\раб5.jpg " width="200">
+                <img src="imgg\раб2.jpg " width="200">
+            </div>
+            ;
+            imagesContainer.insertAdjacentHTML('beforeend', moreImages);
+        }
+    </script>
+    <style>
+    #imagesContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+        gap: 20px; /* Расстояние между изображениями */
+        margin: 20px 0;
+    }
+
+    #imagesContainer img {
+        width: 200px; /* Размер изображения */
+        height: 200px;
+        object-fit: cover; /* Обрезаем изображения, сохраняя пропорции */
+    }
+
+    /* Стили для кнопки "Смотреть ещё" */
+    #loadMoreButton {
+        background-color: #F78FB3;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+
+    #loadMoreButton:hover {
+        background-color: #FF69B4;
+    }
+</style>
+
 
     <section id="reviews">
         <h2>Отзывы</h2>
+        <textarea placeholder="Оставьте ваш отзыв" rows="4" cols="50"></textarea>
+        <button onclick="submitReview()">Отправить</button>
+        <div class="reviews" id="reviewsList">
+        </div>
     </section>
 
     <section id="info">
@@ -128,4 +177,6 @@
     </section>
 
 </body>
+
+
 </html>
