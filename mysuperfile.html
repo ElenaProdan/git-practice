@@ -4,87 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRO BROW</title>
-
-    <style>
-        /* Стили для всего сайта */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif; 
-            background-color: #FADADD; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            scroll-behavior: smooth; /* Плавная прокрутка по ссылкам */
-        }
-
-        header {
-            position: fixed; /* фиксация панели */
-            top: 0;
-            width: 100%;
-            background-color: #FADADD;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для панели */
-            z-index: 1000; /* благодаря этому панель держится вверху */
-        }
-        /*делает меню красивым */
-        nav {
-            display: flex;
-            justify-content: space-around; /* Равномерное распределение ссылок */
-            max-width: 800px; /* Максимальная ширина */
-            margin: 0 auto; /* Центр */
-        }
-
-        /* Стили для панели */
-        nav a {
-            text-decoration: none; /* Убираем подчеркивание у ссылок */
-            color: black;
-            font-size: 1.5rem; 
-            font-family: 'Verdana', sans-serif; 
-        }
-
-        /* рубрики */
-        section {
-            height: 100vh; /*  100% высоты экрана */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; 
-            padding: 20px;
-            box-sizing: border-box; /* внутренняя рамка */
-        }
-
-        .logo {
-            margin-bottom: 60px; 
-            text-align: center;
-        }
-
-        .logo img {
-            width: 400px; /* Ширина логотипа */
-        }
-
-        /* Кнопка "Записаться онлайн" */
-        .button-container {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        /* Стили для кнопки */
-        .button-container a {
-            background-color: #F78FB3; 
-            color: white;
-            padding: 15px 30px; 
-            border-radius: 30px; /* Закругленные углы */
-            font-size: 1.5rem;
-            text-decoration: none; /* Убираем подчеркивание у ссылки */
-            transition: background-color 0.3s ease; /* Плавное изменения фона */
-        }
-
-        /* кликабельно */
-        .button-container a:hover {
-            background-color: #FF69B4; 
-        }
-    </style>
+    <link rel="stylesheet" href="web.css"> <!-- Подключаем внешний файл стилей -->
 </head>
 <body>
 
@@ -110,65 +30,21 @@
         <h2>Галерея</h2>
         <h3>Работа мастера Елены</h3>
         <div id="imagesContainer">
-            <img src="imgg\раб4.jpg"  width="200">
-            <img src="imgg\8QnQY9kyHJ8.jpg " width="200">
-            <img src="imgg\раб3.jpg "  width="200">
+            <img src="imgg\раб4.jpg" width="200">
+            <img src="imgg\8QnQY9kyHJ8.jpg" width="200">
+            <img src="imgg\раб3.jpg" width="200">
         </div>
         <div>
             <button id="loadMoreButton" onclick="showMoreImages()">Смотреть ещё...</button>
         </div>
     </section>
-  
-    <script>
-        function showMoreImages() {
-            const imagesContainer = document.getElementById('imagesContainer');
-            <div id="imagesContainer">
-                <img src="imgg\раб1.jpg " width="200">
-                <img src="imgg\раб5.jpg " width="200">
-                <img src="imgg\раб2.jpg " width="200">
-            </div>
-            ;
-            imagesContainer.insertAdjacentHTML('beforeend', moreImages);
-        }
-    </script>
-    <style>
-    #imagesContainer {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-        gap: 20px; /* Расстояние между изображениями */
-        margin: 20px 0;
-    }
-
-    #imagesContainer img {
-        width: 200px; /* Размер изображения */
-        height: 200px;
-        object-fit: cover; /* Обрезаем изображения, сохраняя пропорции */
-    }
-
-    /* Стили для кнопки "Смотреть ещё" */
-    #loadMoreButton {
-        background-color: #F78FB3;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-top: 20px;
-    }
-
-    #loadMoreButton:hover {
-        background-color: #FF69B4;
-    }
-</style>
-
 
     <section id="reviews">
         <h2>Отзывы</h2>
-        <textarea placeholder="Оставьте ваш отзыв" rows="4" cols="50"></textarea>
+        <textarea id="reviewInput" placeholder="Оставьте ваш отзыв" rows="4" cols="50"></textarea>
         <button onclick="submitReview()">Отправить</button>
         <div class="reviews" id="reviewsList">
+            <!-- Здесь будут отображаться отзывы -->
         </div>
     </section>
 
@@ -176,7 +52,37 @@
         <h2>Информация</h2>
     </section>
 
+    <script>
+        function showMoreImages() {
+            const imagesContainer = document.getElementById('imagesContainer');
+            const moreImages = `
+                <img src="imgg\\раб1.jpg" width="200">
+                <img src="imgg\\раб5.jpg" width="200">
+                <img src="imgg\\раб2.jpg" width="200">
+            `;
+            imagesContainer.insertAdjacentHTML('beforeend', moreImages);
+        }
+
+        function submitReview() {
+            const reviewInput = document.getElementById('reviewInput');
+            const reviewText = reviewInput.value.trim(); // Получаем и очищаем текст от лишних пробелов
+
+            if (reviewText) {
+                const reviewsList = document.getElementById('reviewsList');
+                
+                // Создаем новый элемент для отзыва
+                const newReview = document.createElement('div');
+                newReview.classList.add('review-item'); // Добавляем класс для стилизации
+                newReview.textContent = reviewText;
+
+                // Добавляем новый отзыв в список
+                reviewsList.appendChild(newReview);
+
+                // Очищаем поле ввода
+                reviewInput.value = '';
+            }
+        }
+    </script>
+
 </body>
-
-
 </html>
