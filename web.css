@@ -122,7 +122,67 @@ section {
     background-color: #FADADD;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
-    font-family: 'Arial', sans-serif;
+    border-radius: 5px;   font-family: 'Arial', sans-serif;
     font-size: 1rem;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 600px; /* Отступ сверху, чтобы не заходило на другие секции */
+    position: relative;
+}
+
+#info h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px; /* Отступ между заголовком и блоками */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Стили для блоков с информацией */
+.info-block {
+    width: 150%; /* Ширина блока 70% от экрана */
+    background-color: #FADADD;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px 0; /* Отступ между блоками */
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для заголовков в блоках */
+.info-block h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для текста внутри блоков */
+.info-block p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Логотип в блоках */
+.info-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Стили для логотипа внутри заголовка */
+.info-block h3 img {
+    display: inline-block;
 }
